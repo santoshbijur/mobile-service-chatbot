@@ -1,0 +1,32 @@
+[
+  {
+    "id": "basic",
+    "name": "Basic",
+    "price": 25,
+    "data": "15GB",
+    "calls": "Unlimited local calls",
+    "sms": "Unlimited SMS",
+    "description": "A simple plan designed for light users who mainly need mobile data and essential call features.",
+    "bestFor": ["budget", "light use", "students"]
+  },
+  {
+    "id": "standard",
+    "name": "Standard",
+    "price": 45,
+    "data": "60GB",
+    "calls": "Unlimited calls",
+    "sms": "Unlimited SMS",
+    "description": "A balanced option for working professionals and families who need reliable data and all-purpose connectivity.",
+    "bestFor": ["family", "remote work", "streaming"]
+  },
+  {
+    "id": "premium",
+    "name": "Premium",
+    "price": 79,
+    "data": "Unlimited",
+    "calls": "Unlimited calls + roaming",
+    "sms": "Unlimited SMS",
+    "description": "The premium choice for power users who need unlimited data, travel benefits, and priority support.",
+    "bestFor": ["heavy use", "travelers", "business"]
+  }
+]
