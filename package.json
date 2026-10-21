@@ -1,0 +1,20 @@
+{
+  "name": "mobile-service-chatbot",
+  "version": "1.0.0",
+  "description": "Conversational AI prototype for mobile service plan discovery and signup",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/server.test.js"
+  },
+  "keywords": [
+    "chatbot",
+    "mobile",
+    "plans",
+    "signup"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

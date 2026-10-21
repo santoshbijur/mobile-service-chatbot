@@ -1,0 +1,11 @@
+{
+  "welcomeMessage": "Hi! I can help you find the right mobile service plan. What kind of mobile use do you need most: streaming, business work, family use, or a budget-friendly option?",
+  "planSelectionPrompt": "Reply with the name of the plan you want to choose (Basic, Standard, or Premium).",
+  "signupQuestionSequence": [
+    "What is your full name?",
+    "What is your email address?",
+    "What is your phone number?"
+  ],
+  "completionMessage": "Thanks! Your signup request is ready. We will follow up with a confirmation and final review.",
+  "fallbackPrompt": "Please choose one of the plans: Basic, Standard, or Premium."
+}
