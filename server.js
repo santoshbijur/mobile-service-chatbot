@@ -1,4 +1,5 @@
 const express = require('express');
+const rateLimit = require('express-rate-limit');
 const fs = require('fs');
 const path = require('path');
 
@@ -9,7 +10,24 @@ const conversationPath = path.join(__dirname, 'data', 'conversation-flows.json')
 const plans = JSON.parse(fs.readFileSync(plansPath, 'utf8'));
 const conversationFlows = JSON.parse(fs.readFileSync(conversationPath, 'utf8'));
 
+const apiLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 60,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests. Please try again later.' }
+});
+
+const pageLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 120,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests. Please try again later.' }
+});
+
 app.use(express.json());
+app.use('/api', apiLimiter);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/health', (req, res) => {
@@ -48,7 +66,7 @@ app.post('/api/plans', (req, res) => {
   });
 });
 
-app.get('*', (req, res) => {
+app.get('*', pageLimiter, (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 

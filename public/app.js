@@ -42,7 +42,7 @@ async function loadConversation() {
 function addMessage(text, sender = 'bot') {
   const message = document.createElement('div');
   message.className = `message ${sender}`;
-  message.innerHTML = text;
+  message.textContent = text;
   chatMessages.appendChild(message);
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
